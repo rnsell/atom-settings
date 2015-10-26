@@ -24,31 +24,8 @@
    'jslint':
      'prefix': 'jsl'
      'body': '/*jslint vars: true, devel:true, nomen: true, node: true, indent: 4, maxerr: 50*/'
-'.source.js':
+
    'Transform':
-      'prefix': 'trans'
-      'body': '
-      /*jslint vars: true, devel:true, nomen: true, node: true, indent: 4, maxerr: 50*/\n\n
-      "use strict";\n\n
-      var Transform = require("stream").Transform,\n
-          \tutil = require("util");\n\n
-
-      function $1 (opt){\n
-        \tif(!(this instanceof $1)){\n
-          \t\treturn new $1(opt);\n
-        \t}\n\n
-
-        \tthis.call(Transform, opt);\n
-      }\n\n
-
-      util.inherit($1, Transform);\n\n
-
-      $1.prototype._transform = function(data, enc, tDone){\n
-        \tvar self = this;\n
-      };\n\n
-
-      $1.prototype._flush = function(fDone){\n
-        \tvar self = this;\n
-      };\n\n
-
-      module.exports = $1;\n'
+     'prefix': 'trans'
+     'body': '/*jslint vars: true, devel:true, nomen: true, node: true, indent: 4, maxerr: 50*/\n\n"use strict";\n\nvar Transform = require("stream").Transform,\n\tutil = require("util");\n\nfunction $1 (opt){\n\tif(!(this instanceof $1)){\n\t\treturn new $1(opt);\n\t}\n\n\tthis.call(Transform, opt);\n}\n\nutil.inherit($1, Transform);\n\n $1.prototype._transform = function(data, enc, tDone){\n\tvar self = this;\n};\n\n$1.prototype._flush = function(fDone){\n \tvar self = this;\n};\n\n module.exports = $1;\n'
+ 
