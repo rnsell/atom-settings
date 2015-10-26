@@ -1,0 +1,54 @@
+# Your snippets
+#
+# Atom snippets allow you to enter a simple prefix in the editor and hit tab to
+# expand the prefix into a larger code block with templated values.
+#
+# You can create a new snippet in this file by typing "snip" and then hitting
+# tab.
+#
+# An example CoffeeScript snippet to expand log to console.log:
+#
+# '.source.coffee':
+#   'Console log':
+#     'prefix': 'log'
+#     'body': 'console.log $1'
+#
+# Each scope (e.g. '.source.coffee' above) can only be declared once.
+#
+# This file uses CoffeeScript Object Notation (CSON).
+# If you are unfamiliar with CSON, you can read more about it in the
+# Atom Flight Manual:
+# https://atom.io/docs/latest/using-atom-basic-customization#cson
+
+'.source.js':
+   'jslint':
+     'prefix': 'jsl'
+     'body': '/*jslint vars: true, devel:true, nomen: true, node: true, indent: 4, maxerr: 50*/'
+'.source.js':
+   'Transform':
+      'prefix': 'trans'
+      'body': '
+      /*jslint vars: true, devel:true, nomen: true, node: true, indent: 4, maxerr: 50*/\n\n
+      "use strict";\n\n
+      var Transform = require("stream").Transform,\n
+          \tutil = require("util");\n\n
+
+      function $1 (opt){\n
+        \tif(!(this instanceof $1)){\n
+          \t\treturn new $1(opt);\n
+        \t}\n\n
+
+        \tthis.call(Transform, opt);\n
+      }\n\n
+
+      util.inherit($1, Transform);\n\n
+
+      $1.prototype._transform = function(data, enc, tDone){\n
+        \tvar self = this;\n
+      };\n\n
+
+      $1.prototype._flush = function(fDone){\n
+        \tvar self = this;\n
+      };\n\n
+
+      module.exports = $1;\n'
